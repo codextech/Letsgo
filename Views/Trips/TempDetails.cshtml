@@ -1,0 +1,25 @@
+﻿@model  LetsGo.Models.Trip
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Trip Details</h2>
+
+<h2>@Model.TripName</h2>
+
+
+<div id="category-details">
+    <p>
+        <em>Category:@Model.TripName </em>
+
+    </p>>
+
+    <p>
+        Price: @Model.Price
+    </p>
+    <p class="button">
+        @Html.ActionLink("Check Out", "Checkout")
+    </p>
+
+
+</div>

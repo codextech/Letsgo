@@ -1,0 +1,161 @@
+﻿﻿@model LetsGo.ViewModels.CheckOutViewModel
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_LetsGoLayout.cshtml";
+}
+
+
+
+<section class="checkout-page">
+    <div class="container">
+        <div class="border-box">
+            <div class="box-title">
+                <h4>Billing Details</h4>
+            </div>
+            <br>
+            <div class="row">
+                <form>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                                <label>City <span class="required">*</span></label>
+                               
+                                @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+
+
+                            </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Your Name<span class="required">*</span></label>
+                                   
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="form-group">
+                            <label>Address<span class="required">*</span></label>
+                            
+                            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+
+
+                        </div>
+                        <div class="form-group">
+                            <label>Email<span class="required">*</span></label>
+                          
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile<span class="required">*</span></label>
+                            
+                            @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Mobile, "", new { @class = "text-danger" })
+
+
+                        </div>
+
+                     
+
+
+                        <div class="form-group">
+                            <button class="btn btn-primary hvr-sweep-to-right">Proceed Checkout</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="border-box">
+                            <div class="btn-group card-option" data-toggle="buttons">
+                                <label class="btn active" data-toggle="tooltip" data-placement="bottom" title="Master Card">
+                                    <input type="radio" name="options" id="option1" checked>
+                                    <img src="~/Images/img/card-master.png" alt="">
+                                </label>
+                                <label class="btn" data-toggle="tooltip" data-placement="bottom" title="Visa">
+                                    <input type="radio" name="options" id="option2">
+                                    <img src="~/Images/img/card-visa.png" alt="">
+                                </label>
+                                <label class="btn" data-toggle="tooltip" data-placement="bottom" title="Paypal">
+                                    <input type="radio" name="options" id="option3">
+                                    <img src="~/Images/img/card-paypal.png" alt="">
+                                </label>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Cardholder Name <span class="required"></span></label>
+
+                                        @Html.TextBoxFor(m => m.CName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.CName, "", new { @class = "text-danger" })
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Expiry Date(MM/YYYY) <span class="required"></span></label>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+
+
+                                                @Html.TextBoxFor(m => m.Month, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.Month, "", new { @class = "text-danger" })
+
+
+                                            </div>
+                                            <div class="col-sm-6">
+
+                                                @Html.TextBoxFor(m => m.Year, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.Year, "", new { @class = "text-danger" })
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+    <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Credit Card Number<span class="required">*</span></label>
+                                       
+                                        @Html.TextBoxFor(m => m.CardNumber, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.CardNumber, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>CVV Code<span class="required">*</span></label>
+                                       
+                                        @Html.TextBoxFor(m => m.Cvv, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Cvv, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+

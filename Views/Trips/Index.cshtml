@@ -1,0 +1,239 @@
+﻿@model  IEnumerable<LetsGo.Models.Trip>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LetsGoLayout.cshtml";
+}
+
+ <!-- Remove Class carousel-fade just to slide -->
+<div class="carousel slide carousel-fade full-height" id="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <!-- Remove Class with-text-box if black text box is not needed -->
+        <!-- Remove Class with-overlay clear image is required -->
+        <div class="item with-overlay active" style="background-image: url('../../Images/img/trip_detail/4.jpg');">
+            <div class="carousel-caption center-txt">
+                <h1 class="main-header">Enjoy Adventure</h1>
+                <hr>
+                <p class="sub-header">Wander Exotic places and without getting lost.</p>
+                <a href="#" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
+            </div>
+        </div>
+        <div class="item with-text-box with-overlay" style="background-image: url('../../Images/img/trip_detail/5.jpg');">
+            <div class="carousel-caption center-txt">
+                <h1 class="main-header">Outdoor Experience</h1>
+                <hr>
+                <p class="sub-header">Wander Exotic places and without getting lost.</p>
+                <a href="#" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
+            </div>
+        </div>
+        <div class="item with-overlay" style="background-image: url('../../Images/img/trip_detail/6.jpg');">
+            <div class="carousel-caption center-txt">
+                <h1 class="main-header">Lost Joy</h1>
+                <hr>
+                <p class="sub-header">Wander Exotic places and without getting lost.</p>
+                <a href="#" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Controls -->
+    <!-- Available Variation Class for carousel-control => circle, bottom, bottom-left, bottom-right" -->
+    <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+        <span class="icon-arr-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+        <span class="icon-arr-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+
+    <!-- Indicators -->
+    <!-- Available Variation Class for carousel-indicators => dashed, circle" -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+    </ol>
+</div>
+<!-- Header End -->
+
+
+
+
+<section class="showcase" style="background: url('../../Images/img/bg.html');">
+    <div class="main-title">
+        <h2>Our Top Destination</h2>
+        <p>Consectetur adipisicing elit. Quisquam fugit ducimus, qui molestias.</p>
+    </div>
+
+
+
+
+
+    <div class="container">
+
+        <div class="row item">
+
+           @foreach (var item in Model)
+           {
+
+            <div class="col-sm-6 col-md-4">
+                <div class="item-grid">
+                    <div class="item-img" style="background-image: url('../../Images/img/trip_detail/thumb_1.jpg');">
+                        <div class="item-overlay">
+                            <a href="@Url.Action("Details", "Trips", new { tripId = item.Id })"><span class="icon-binocular"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-info">
+                            <span class="icon-easy"></span>
+                            <h4 class="title"><a href="#">@item.TripName</a></h4>
+                        </div>
+
+
+                        <div class="item-detail">
+                            <div class="left">
+                                <div class="day"><span class="icon-sun"></span>@item.Duration Day</div>
+                            </div>
+                            <div class="right">
+                                <div class="price">Rs @item.Price</div>
+                                <a href="@Url.Action("Details", "Trips", new { tripId = item.Id })" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           }
+
+        </div>
+
+    </div>
+</section>
+
+<div class="counter-div base boxed">
+    <div class="clearfix">
+        <div class="col-sm-6 col-md-3">
+            <span class="icon-font icon-tent"></span>
+            <span class="counter">32</span>
+            <p>Number of People Camped</p>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <span class="icon-font icon-camera"></span>
+            <span class="counter">12437</span>
+            <p>Pictures Taken this Year</p>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <span class="icon-font icon-sun"></span>
+            <span class="counter">35</span>
+            <p>Average Temprature</p>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <span class="icon-font icon-umbrella"></span>
+            <span class="counter">45</span>
+            <p>Rainfall Last Year</p>
+        </div>
+    </div>
+</div>
+
+<div class="banner">
+    <div class="container">
+        <div class="section-title center">
+            <h3>Featured Guides</h3>
+        </div>
+        <div class="row team">
+            <div class="col-sm-6 col-md-4">
+                <div class="member">
+                    <div class="image">
+                        <img src="../../Images/img/team/1.jpg" alt="">
+                    </div>
+                    <h4 class="name">Kim L. Burney</h4>
+                    <h5 class="detail">Guide/Writer</h5>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
+                    <div class="social">
+                        <a href="#" class="icon icon-facebook"></a>
+                        <a href="#" class="icon icon-twitter"></a>
+                        <a href="#" class="icon icon-google"></a>
+                        <a href="#" class="icon icon-rss"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="member">
+                    <div class="image">
+                        <img src="../../Images/img/team/2.jpg" alt="">
+                    </div>
+                    <h4 class="name">Shing Ch'in</h4>
+                    <h5 class="detail">Tour Guide</h5>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
+                    <div class="social">
+                        <a href="#" class="icon icon-facebook"></a>
+                        <a href="#" class="icon icon-twitter"></a>
+                        <a href="#" class="icon icon-google"></a>
+                        <a href="#" class="icon icon-rss"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="member">
+                    <div class="image">
+                        <img src="../../Images/img/team/3.jpg" alt="">
+                    </div>
+                    <h4 class="name">Pitez Maltr</h4>
+                    <h5 class="detail">City Guide</h5>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
+                    <div class="social">
+                        <a href="#" class="icon icon-facebook"></a>
+                        <a href="#" class="icon icon-twitter"></a>
+                        <a href="#" class="icon icon-google"></a>
+                        <a href="#" class="icon icon-rss"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="banner base">
+    <div class="container">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="testimonial">
+                <div>
+                    <img src="../../Images/img/team/1-sm.jpg" alt="" class="avatar">
+                    <div class="name">Kim L. Burney</div>
+                    <div>U.S.A</div>
+                    <div class="rating">
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star-empty"></span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque minus maxime atque ea accusamus, delectus consequatur libero non mollitia fugiat!</p>
+                </div>
+                <div>
+                    <img src="../../Images/img/team/2-sm.jpg" alt="" class="avatar">
+                    <div class="name">Shing Ch'in</div>
+                    <div>China</div>
+                    <div class="rating">
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star-empty"></span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque minus maxime atque ea accusamus, delectus consequatur libero non mollitia fugiat!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,17 @@
+﻿@model  IEnumerable<LetsGo.Models.Trip>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">
+            @Html.ActionLink(item.TripName, "Details", new { tripId = item.Id })
+        </li>
+    }
+</ul>

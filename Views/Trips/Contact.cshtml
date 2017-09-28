@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LetsGoLayout.cshtml";
+}
+
+
+<section class="white">
+    <div class="container">
+        <div class="">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="feature-list center">
+                        <span class="square-icon"><span class="icon-telephone"></span></span>
+                        <div class="desc">
+                            <h3>Call us</h3>
+                            <h5>+464 929 563 22</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="feature-list center">
+                        <span class="square-icon"><span class="icon-locate"></span></span>
+                        <div class="desc">
+                            <h3>Atlanta 252</h3>
+                            <h5>Georgia, USA</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="feature-list center">
+                        <span class="square-icon"><span class="icon-mail"></span></span>
+                        <div class="desc">
+                            <h3>Email us</h3>
+                            <h5>info@moldthemes.com</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <br>
+
+            <form id="ajax-contact" method="post" action="http://moldthemes.com/mold_discover/contact_send_mail.php">
+                <div id="form-messages" class="alert" role="alert" style="display: none;"></div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" class="form-control">Your Message</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary hvr-sweep-to-right">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</section>
